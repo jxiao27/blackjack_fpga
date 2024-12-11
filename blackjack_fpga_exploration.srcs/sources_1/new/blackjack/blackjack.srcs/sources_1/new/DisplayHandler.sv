@@ -58,15 +58,15 @@ always @(*) begin
      2'b00: begin
        an <= 4'b1110;
        curr_digit  <= BCD[3:0];
-       if          (state == 3'b011) begin
+       if          (state == 3'b100) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b1110000;
          dp        <= 1'b1;
-       end else if (state == 3'b101) begin
+       end else if (state == 3'b001) begin
          led[15:0] <= 16'b1111111111111111;
          seg[6:0]  <= 7'b1110111;
          dp        <= 1'b0;
-       end else if (state == 3'b100) begin
+       end else if (state == 3'b010) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b0110000;
          dp        <= 1'b0;
@@ -81,15 +81,15 @@ always @(*) begin
      2'b01: begin     
        an <= 4'b1101;
        curr_digit  <= BCD[7:4];
-       if          (state == 3'b011) begin
+       if          (state == 3'b100) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b0100100;
          dp        <= 1'b0;
-       end else if (state == 3'b101) begin
+       end else if (state == 3'b001) begin
          led[15:0] <= 16'b1111111111111111;
          seg[6:0]  <= 7'b0010010;
          dp        <= 1'b0;
-       end else if (state == 3'b100) begin
+       end else if (state == 3'b010) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b0100100;
          dp        <= 1'b0;
@@ -104,15 +104,15 @@ always @(*) begin
      2'b10: begin
        an <= 4'b1011;
        curr_digit  <= 4'b0000;
-       if          (state == 3'b011) begin
+       if          (state == 3'b100) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b1000001;
          dp        <= 1'b0;
-       end else if (state == 3'b101) begin
+       end else if (state == 3'b001) begin
          led[15:0] <= 16'b1111111111111111;
          seg[6:0]  <= 7'b1001000;
          dp        <= 1'b0;
-       end else if (state == 3'b100) begin
+       end else if (state == 3'b010) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b0000001;
          dp        <= 1'b0;
@@ -127,15 +127,15 @@ always @(*) begin
      2'b11: begin
        an <= 4'b0111;
        curr_digit  <= rank;
-       if          (state == 3'b011) begin
+       if          (state == 3'b100) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b1100000;
          dp        <= 1'b0;
-       end else if (state == 3'b101) begin
+       end else if (state == 3'b001) begin
          led[15:0] <= 16'b1111111111111111;
          seg[6:0]  <= 7'b0000110;
          dp        <= 1'b0;
-       end else if (state == 3'b100) begin
+       end else if (state == 3'b010) begin
          led[15:0] <= 16'b0000000000000000;
          seg[6:0]  <= 7'b1110001;
          dp        <= 1'b0;

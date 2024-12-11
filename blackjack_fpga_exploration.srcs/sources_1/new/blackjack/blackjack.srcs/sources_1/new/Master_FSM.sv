@@ -32,21 +32,22 @@ module Master_FSM(
     );
 
 wire [5:0] new_card;
-wire [7:0] player_hand_value, dealer_hand_value;
-wire [2:0] state;
+wire [7:0] player_hand_value;
 wire [3:0] rank;
 wire [15:0] BCD_hand;
-wire reset, hit, stand, deck_empty, dealer_bust, player_bust;
+wire reset, hit, stand, player_bust, game_over, win;
+wire [2:0] win_states;
 assign reset = btnU;
-
+assign win_states = {player_bust, game_over, win};
 ButtonHandler hit_handler(clk, reset, btnC, hit);
 ButtonHandler stand_handler(clk, reset, btnD, stand);
 
 generateCard card_generator(clk, reset, 6'd25, new_card, deck_empty);
 CardDecoder  decode_card(new_card, rank, );
-BlackjackFSM gamelogic(clk, reset, hit, stand, new_card, player_hand_value, dealer_hand_value, player_bust, dealer_bust, state);
+BlackjackLogic gamelogic(clk, reset, hit, stand, player_hand_value, player_bust, , , game_over, win);
 
-DisplayHandler display(clk, reset, player_hand_value, rank, state, seg, an, led, dp);
+
+DisplayHandler display(clk, reset, player_hand_value, 4'b0, win_states, seg, an, led, dp);
 
 endmodule
 

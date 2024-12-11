@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Dec 11 07:31:49 2024
+# Process ID: 22736
+# Current directory: C:/cs233H_labs/blackjack/blackjack.runs/synth_1
+# Command line: vivado.exe -log Master_FSM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Master_FSM.tcl
+# Log file: C:/cs233H_labs/blackjack/blackjack.runs/synth_1/Master_FSM.vds
+# Journal file: C:/cs233H_labs/blackjack/blackjack.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Master_FSM.tcl -notrace
